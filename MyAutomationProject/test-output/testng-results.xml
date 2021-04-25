@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SuiteA" duration-ms="68497" started-at="2021-04-25T15:23:41 IST" finished-at="2021-04-25T15:24:49 IST">
+    <groups>
+    </groups>
+    <test name="Test1" duration-ms="44212" started-at="2021-04-25T15:23:41 IST" finished-at="2021-04-25T15:24:25 IST">
+      <class name="com.pilot.testcases.VerifyPilotNameEmail">
+        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="inIt" is-config="true" duration-ms="629" started-at="2021-04-25T15:23:42 IST" finished-at="2021-04-25T15:23:43 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=VerifyPilotNameEmail.verifyPiloNameEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inIt -->
+        <test-method status="PASS" signature="verifyPiloNameEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="verifyPiloNameEmail" duration-ms="40819" started-at="2021-04-25T15:23:43 IST" data-provider="dataTestSuiteA" finished-at="2021-04-25T15:24:24 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Natwar]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[newalkar.sandeep@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[9829312193]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[I am doing automation]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPiloNameEmail -->
+        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="quite" is-config="true" duration-ms="1200" started-at="2021-04-25T15:24:24 IST" finished-at="2021-04-25T15:24:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quite -->
+      </class> <!-- com.pilot.testcases.VerifyPilotNameEmail -->
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="10297" started-at="2021-04-25T15:24:25 IST" finished-at="2021-04-25T15:24:35 IST">
+      <class name="com.pilot.testcases.VerifyMobile">
+        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="inIt" is-config="true" duration-ms="1" started-at="2021-04-25T15:24:25 IST" finished-at="2021-04-25T15:24:25 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=VerifyMobile.verifyPilomobile(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inIt -->
+        <test-method status="PASS" signature="verifyPilomobile(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="verifyPilomobile" duration-ms="10157" started-at="2021-04-25T15:24:25 IST" data-provider="dataTestSuiteA" finished-at="2021-04-25T15:24:35 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Natwar]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[newalkar.sandeep@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[9829312193]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[I am doing automation]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPilomobile -->
+        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="quite" is-config="true" duration-ms="63" started-at="2021-04-25T15:24:35 IST" finished-at="2021-04-25T15:24:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quite -->
+      </class> <!-- com.pilot.testcases.VerifyMobile -->
+    </test> <!-- Test2 -->
+    <test name="Test3" duration-ms="13898" started-at="2021-04-25T15:24:35 IST" finished-at="2021-04-25T15:24:49 IST">
+      <class name="com.pilot.testcases.VerifyDescription">
+        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="inIt" is-config="true" duration-ms="1" started-at="2021-04-25T15:24:35 IST" finished-at="2021-04-25T15:24:35 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=VerifyDescription.verifyDescription(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inIt -->
+        <test-method status="PASS" signature="verifyDescription(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="verifyDescription" duration-ms="13547" started-at="2021-04-25T15:24:35 IST" data-provider="dataTestSuiteA" finished-at="2021-04-25T15:24:49 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Natwar]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[newalkar.sandeep@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[9829312193]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[I am doing automation]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDescription -->
+        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="quite" is-config="true" duration-ms="235" started-at="2021-04-25T15:24:49 IST" finished-at="2021-04-25T15:24:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quite -->
+      </class> <!-- com.pilot.testcases.VerifyDescription -->
+    </test> <!-- Test3 -->
+  </suite> <!-- SuiteA -->
+</testng-results>
