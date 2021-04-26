@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="SuiteA" duration-ms="68497" started-at="2021-04-25T15:23:41 IST" finished-at="2021-04-25T15:24:49 IST">
+  <suite name="SuiteA" duration-ms="95683" started-at="2021-04-26T17:07:33 IST" finished-at="2021-04-26T17:09:09 IST">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="44212" started-at="2021-04-25T15:23:41 IST" finished-at="2021-04-25T15:24:25 IST">
+    <test name="Test1" duration-ms="50221" started-at="2021-04-26T17:07:33 IST" finished-at="2021-04-26T17:08:23 IST">
       <class name="com.pilot.testcases.VerifyPilotNameEmail">
-        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="inIt" is-config="true" duration-ms="629" started-at="2021-04-25T15:23:42 IST" finished-at="2021-04-25T15:23:43 IST">
+        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="inIt" is-config="true" duration-ms="256" started-at="2021-04-26T17:07:34 IST" finished-at="2021-04-26T17:07:34 IST">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- inIt -->
-        <test-method status="PASS" signature="verifyPiloNameEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="verifyPiloNameEmail" duration-ms="40819" started-at="2021-04-25T15:23:43 IST" data-provider="dataTestSuiteA" finished-at="2021-04-25T15:24:24 IST">
+        <test-method status="PASS" signature="verifyPiloNameEmail(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="verifyPiloNameEmail" duration-ms="46445" started-at="2021-04-26T17:07:34 IST" data-provider="dataTestSuiteA" finished-at="2021-04-26T17:08:21 IST">
           <params>
             <param index="0">
               <value>
@@ -44,15 +44,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPiloNameEmail -->
-        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="quite" is-config="true" duration-ms="1200" started-at="2021-04-25T15:24:24 IST" finished-at="2021-04-25T15:24:25 IST">
+        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyPilotNameEmail@34c4973]" name="quite" is-config="true" duration-ms="2269" started-at="2021-04-26T17:08:21 IST" finished-at="2021-04-26T17:08:23 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quite -->
       </class> <!-- com.pilot.testcases.VerifyPilotNameEmail -->
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="10297" started-at="2021-04-25T15:24:25 IST" finished-at="2021-04-25T15:24:35 IST">
+    <test name="Test2" duration-ms="21374" started-at="2021-04-26T17:08:23 IST" finished-at="2021-04-26T17:08:45 IST">
       <class name="com.pilot.testcases.VerifyMobile">
-        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="inIt" is-config="true" duration-ms="1" started-at="2021-04-25T15:24:25 IST" finished-at="2021-04-25T15:24:25 IST">
+        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="inIt" is-config="true" duration-ms="1" started-at="2021-04-26T17:08:23 IST" finished-at="2021-04-26T17:08:23 IST">
           <params>
             <param index="0">
               <value>
@@ -63,7 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- inIt -->
-        <test-method status="PASS" signature="verifyPilomobile(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="verifyPilomobile" duration-ms="10157" started-at="2021-04-25T15:24:25 IST" data-provider="dataTestSuiteA" finished-at="2021-04-25T15:24:35 IST">
+        <test-method status="FAIL" signature="verifyPilomobile(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="verifyPilomobile" duration-ms="21134" started-at="2021-04-26T17:08:23 IST" data-provider="dataTestSuiteA" finished-at="2021-04-26T17:08:44 IST">
           <params>
             <param index="0">
               <value>
@@ -86,18 +86,86 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[Browsing context has been discarded
+Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
+System info: host: 'JYOTILP', ip: '192.168.29.136', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 88.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210415204500, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 19604, moz:profile: C:\Users\Jyoti\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0dacea22-c6ef-475d-ba6f-26326c55e8ce
+*** Element info: {Using=xpath, value=/html/body/section[3]/div/div[1]/div[2]/a[1]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
+Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
+System info: host: 'JYOTILP', ip: '192.168.29.136', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 88.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210415204500, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 19604, moz:profile: C:\Users\Jyoti\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 0dacea22-c6ef-475d-ba6f-26326c55e8ce
+*** Element info: {Using=xpath, value=/html/body/section[3]/div/div[1]/div[2]/a[1]}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:196)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:129)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:333)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:451)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:394)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:325)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at com.sun.proxy.$Proxy14.click(Unknown Source)
+at com.pilot.pages.NameEmailFieldPage.clickDrName(NameEmailFieldPage.java:39)
+at com.pilot.testcases.VerifyMobile.verifyPilomobile(VerifyMobile.java:36)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPilomobile -->
-        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="quite" is-config="true" duration-ms="63" started-at="2021-04-25T15:24:35 IST" finished-at="2021-04-25T15:24:35 IST">
+        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyMobile@9a7504c]" name="quite" is-config="true" duration-ms="127" started-at="2021-04-26T17:08:44 IST" finished-at="2021-04-26T17:08:45 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quite -->
       </class> <!-- com.pilot.testcases.VerifyMobile -->
     </test> <!-- Test2 -->
-    <test name="Test3" duration-ms="13898" started-at="2021-04-25T15:24:35 IST" finished-at="2021-04-25T15:24:49 IST">
+    <test name="Test3" duration-ms="23883" started-at="2021-04-26T17:08:45 IST" finished-at="2021-04-26T17:09:09 IST">
       <class name="com.pilot.testcases.VerifyDescription">
-        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="inIt" is-config="true" duration-ms="1" started-at="2021-04-25T15:24:35 IST" finished-at="2021-04-25T15:24:35 IST">
+        <test-method status="PASS" signature="inIt(org.testng.ITestResult)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="inIt" is-config="true" duration-ms="0" started-at="2021-04-26T17:08:45 IST" finished-at="2021-04-26T17:08:45 IST">
           <params>
             <param index="0">
               <value>
@@ -108,7 +176,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- inIt -->
-        <test-method status="PASS" signature="verifyDescription(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="verifyDescription" duration-ms="13547" started-at="2021-04-25T15:24:35 IST" data-provider="dataTestSuiteA" finished-at="2021-04-25T15:24:49 IST">
+        <test-method status="PASS" signature="verifyDescription(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="verifyDescription" duration-ms="23639" started-at="2021-04-26T17:08:45 IST" data-provider="dataTestSuiteA" finished-at="2021-04-26T17:09:08 IST">
           <params>
             <param index="0">
               <value>
@@ -134,7 +202,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDescription -->
-        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="quite" is-config="true" duration-ms="235" started-at="2021-04-25T15:24:49 IST" finished-at="2021-04-25T15:24:49 IST">
+        <test-method status="PASS" signature="quite()[pri:0, instance:com.pilot.testcases.VerifyDescription@687080dc]" name="quite" is-config="true" duration-ms="102" started-at="2021-04-26T17:09:08 IST" finished-at="2021-04-26T17:09:09 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quite -->

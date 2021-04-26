@@ -19,7 +19,7 @@ public class VerifyPilotNameEmail extends TestBase{
 		
 		
 		log("Opening Browser");
-		driver=browsers("Mozilla");
+		browsers("Mozilla");
 		
 		
 		
@@ -32,22 +32,10 @@ public class VerifyPilotNameEmail extends TestBase{
 		log("Clicking on Doctor's name");
 		isElementPresent("/html/body/section[3]/div/div[1]/div[2]/a[1]",driver);
 		nameEmailFieldPage.clickDrName();
-		
-		
-		log("Typing in name field");
-		
-		if(!isElementPresent("//input[@id='req_name1']",driver)) {
 			
-			softFailure("Xpath do not match");
-			softassert.assertEquals("//input[@id='req_name1']", "//input[@id='req_name']");//This line print log and actual error in last line in Reports.
-			
-			
-		}
 		
-		
-		
-		/*isElementPresent("//input[@id='req_name']",driver);
-		nameEmailFieldPage.typeName(name);*/
+		log("Typing in name  field");
+		nameEmailFieldPage.typeName(name);
 		
 		
 		
@@ -56,7 +44,7 @@ public class VerifyPilotNameEmail extends TestBase{
 		nameEmailFieldPage.typeEmailId(email);
 		
 		log("Closing driver");
-		//driver.quit();
+		driver.quit();
 		
 	}
 	

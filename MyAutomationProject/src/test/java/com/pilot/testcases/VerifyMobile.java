@@ -41,7 +41,7 @@ public class VerifyMobile extends TestBase{
 		
 		
 		
-		//driver.quit();
+		driver.quit();
 		
 	}
 	
