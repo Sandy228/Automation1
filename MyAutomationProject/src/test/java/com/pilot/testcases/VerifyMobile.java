@@ -22,7 +22,7 @@ public class VerifyMobile extends TestBase{
 	public void verifyPilomobile(String name, String email,String mobile,String description)  {
 		
 	
-		browsers("Mozilla");
+		browsers("chrome");
 		driver.get("https://www.sakraworldhospital.com/request-appointment.php");
 		
 		

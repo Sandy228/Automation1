@@ -19,7 +19,7 @@ public class VerifyPilotNameEmail extends TestBase{
 		
 		
 		log("Opening Browser");
-		browsers("Mozilla");
+		browsers("chrome");
 		
 		
 		

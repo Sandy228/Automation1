@@ -23,7 +23,7 @@ public class VerifyDescription extends TestBase{
 	@Test(dataProviderClass=CustomDataProviders.class,dataProvider="dataTestSuiteA")
 	public void verifyDescription(String name, String email,String mobile,String description) {
 		
-		browsers("Mozilla");
+		browsers("chrome");
 		driver.get("https://www.sakraworldhospital.com/request-appointment.php");
 		
 		
