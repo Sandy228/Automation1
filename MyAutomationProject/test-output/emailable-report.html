@@ -8,41 +8,11 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">SuiteA</th></tr>
-<tr><td><a href="#t0">Test1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">50,221</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Test2</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">21,374</td><td></td><td></td></tr>
-<tr><td><a href="#t2">Test3</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">23,883</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">95,478</th><th colspan="2"></th></tr>
+<tr><th colspan="7">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">28,478</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">SuiteA</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.pilot.testcases.VerifyPilotNameEmail</td><td><a href="#m0">verifyPiloNameEmail</a></td><td rowspan="1">1619437054804</td><td rowspan="1">46445</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Test2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.pilot.testcases.VerifyMobile</td><td><a href="#m1">verifyPilomobile</a></td><td rowspan="1">1619437103767</td><td rowspan="1">21134</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">Test3 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.pilot.testcases.VerifyDescription</td><td><a href="#m2">verifyDescription</a></td><td rowspan="1">1619437125270</td><td rowspan="1">23639</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.pilot.testcases.VerifyPilotNameEmail</td><td><a href="#m0">verifyPiloNameEmail</a></td><td rowspan="1">1619437970921</td><td rowspan="1">26054</td></tr></tbody>
 </table>
-<h2>Test1</h2><h3 id="m0">com.pilot.testcases.VerifyPilotNameEmail#verifyPiloNameEmail</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>Natwar</td><td>newalkar.sandeep@gmail.com</td><td>9829312193</td><td>I am doing automation</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Test2</h2><h3 id="m1">com.pilot.testcases.VerifyMobile#verifyPilomobile</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>Natwar</td><td>newalkar.sandeep@gmail.com</td><td>9829312193</td><td>I am doing automation</td></tr><tr><th colspan="4">Exception</th></tr><tr><td colspan="4"><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
-Build info: version: &apos;4.0.0-alpha-6&apos;, revision: &apos;5f43a29cfc&apos;
-System info: host: &apos;JYOTILP&apos;, ip: &apos;192.168.29.136&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 88.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210415204500, moz:geckodriverVersion: 0.29.0, moz:headless: false, moz:processID: 19604, moz:profile: C:\Users\Jyoti\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0dacea22-c6ef-475d-ba6f-26326c55e8ce
-*** Element info: {Using=xpath, value=/html/body/section[3]/div/div[1]/div[2]/a[1]}
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:196)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:129)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:582)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:333)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:451)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:394)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:325)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy14.click(Unknown Source)
-	at com.pilot.pages.NameEmailFieldPage.clickDrName(NameEmailFieldPage.java:39)
-	at com.pilot.testcases.VerifyMobile.verifyPilomobile(VerifyMobile.java:36)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Test3</h2><h3 id="m2">com.pilot.testcases.VerifyDescription#verifyDescription</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>Natwar</td><td>newalkar.sandeep@gmail.com</td><td>9829312193</td><td>I am doing automation</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">com.pilot.testcases.VerifyPilotNameEmail#verifyPiloNameEmail</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>Natwar</td><td>newalkar.sandeep@gmail.com</td><td>9829312193</td><td>I am doing automation</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

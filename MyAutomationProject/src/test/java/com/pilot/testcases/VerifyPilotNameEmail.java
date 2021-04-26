@@ -11,7 +11,7 @@ import testbase.TestBase;
 
 public class VerifyPilotNameEmail extends TestBase{
 
-	WebDriver driver;
+
 	
 	@Test(dataProviderClass=CustomDataProviders.class,dataProvider="dataTestSuiteA")
 	public void verifyPiloNameEmail(String name, String email,String mobile,String description) {
