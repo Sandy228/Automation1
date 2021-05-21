@@ -1,0 +1,1709 @@
+**How to getlinks by name :
+driver.findElement(By.linkText("Dr. Shishir Chandrashekhar"));// //a[text()='Dr. Shishir Chandrashekhar']
+for below example:
+<a onclick="addURL(105,054)" data-toggle="modal" data-target="#request-appointment" class="transition-fast">Dr. Shishir Chandrashekhar</a>
+
+** Need to check in Pilot Project waitForPageLoad() method not found
+
+***Global wait>> driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+
+
+//Handling Drop Down with Select class
+		WebElement genderDropdownl_locator=driver.findElement(By.xpath(prop.getProperty("gender_dropdown_locator")));
+		driver.findElement(By.xpath(prop.getProperty("gender_dropdown_locator"))).click();
+		Select select= new Select(genderDropdownl_locator);
+		select.selectByValue("1");
+		select.selectByVisibleText("Female");
+		
+		
+		============================showing txt xpath============================
+		<span class="ui-icon ui-icon-circle-triangle-w">Prev</span>
+		//a/span[text()='Prev']
+		
+		single forward slash works in mac and windows both \\ slash works in windows only.
+			 XSSFWorkbook workbook = new XSSFWorkbook(projectPath+"/xlsfile/data.xlsx");
+		
+		
+		
+
+		
+		
+	============================Implicit Wait globle============================
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//Implicit globle wait.
+		
+		
+		
+		============================get attribute============================
+		System.out.println("element of 5th index text===="+element.getAttribute("href"));// will provide you the href link.
+		for value we give +element.getAttribute("value")); // value of any text field
+		String uhid_value=driver.findElement(By.xpath("//input[@id='req_uhid']")).getAttribute("value");
+		
+	============================Calendar Implementation============================
+		public void getCalendar(String dateTobe,String locator_Prv, String locator_Next,String displayingDateLocator,String daytoBeLocator,String calendarFieldclk_locator) throws ParseException {
+		
+		//As we have in calendar date mentiond like February 2021 so 
+		//tobedate which should be in same format 
+		
+	
+		
+		
+		SimpleDateFormat sdf= new SimpleDateFormat("dd-MMMM-yyyy");
+		
+		Date Obj_Of_dateToBe=sdf.parse(dateTobe);
+		
+		
+		String dayToBe =new SimpleDateFormat("dd").format(Obj_Of_dateToBe);
+		
+		
+		String MonthToBe =new SimpleDateFormat("MMMM").format(Obj_Of_dateToBe);
+		String yearToBe =new SimpleDateFormat("yyyy").format(Obj_Of_dateToBe);
+		
+		String MonthAndYearTobe=MonthToBe+" "+yearToBe;
+		
+		System.out.println("MonthAndYearTobe=========="+MonthAndYearTobe);
+		
+		
+		
+		
+		//Displaying Calendar title Locator 
+		driver.findElement(By.xpath(calendarFieldclk_locator)).click();
+		
+		String displayingDate=driver.findElement(By.xpath(displayingDateLocator)).getText();
+		System.out.println("displayingDate==="+displayingDate);
+		
+			Date currentdate= new Date();
+		
+		while(!displayingDate.equals(MonthAndYearTobe)) {
+			
+			
+			if(currentdate.compareTo(Obj_Of_dateToBe)==1) {
+				
+				driver.findElement(By.xpath(locator_Prv)).click();
+			}
+			else{
+				driver.findElement(By.xpath(locator_Next)).click();
+				
+				
+			}
+			displayingDate=driver.findElement(By.xpath(displayingDateLocator)).getText();
+			String SelectingDate= driver.findElement(By.xpath(displayingDateLocator)).getText();
+			System.out.println("SelectingDate===="+SelectingDate);
+			
+			
+			
+		}
+		
+		driver.findElement(By.xpath("//a[text()='12']")).click();
+		
+		
+		
+	}
+		
+		
+	============================Multiple Object Extraction from specific place============================
+	
+	
+		List<WebElement> all_element=	driver.findElements(By.xpath("//div[@class='_2WkVRV']"));// class is same for all te-shirt name. 
+		
+		for(int i=0;i<all_element.size();i++) {
+			
+			WebElement element=all_element.get(i);
+			System.out.println(element.getText());
+			
+			
+		}
+	
+		//by for each loop, what ever you want from any object put right side and where you want to store put left side 
+		for(WebElement element:all_element) {
+			
+			System.out.println("Printing from ForEach loop"+element.getText());
+		}
+		
+	============================For Each Loop============================
+		//by for each loop, what ever you want from any object put right side and where you want to store put left side 
+		for(WebElement element:all_element) {
+			
+			System.out.println("Printing from ForEach loop"+element.getText());
+			
+			
+			
+			
+	============================To get the Response code of any url============================
+			public static void main(String[] args) {
+		
+		String url="https://edition.cnn.com/business";
+		
+		
+		int resp_code=0;
+		try {
+		resp_code = Request.Get(url).execute().returnResponse().getStatusLine()//org.apache.http.client.fluent.Request
+		       .getStatusCode();
+		System.out.println("Respose code for URL "+ url +" is -> "+ resp_code);
+		       
+		} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+
+	}
+	================================Mutiple Objects(text name) Extraction from Flip cart by comman class==============================		
+	
+	@Test
+	public void mutipleObjectExtraction() {
+		
+		browsers("Chrome");
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//Implicit globle wait.
+		driver.get("https://www.flipkart.com/clothing-and-accessories/topwear/tshirt/men-tshirt/pr?sid=clo,ash,ank,edy&otracker=categorytree&otracker=nmenu_sub_Men_0_T-Shirts");
+	
+		//We have to pick comman class and save in WebElemetns then iterate them
+		List<WebElement> all_element=	driver.findElements(By.xpath("//div[@class='_2WkVRV']"));// class is same for all te-shirt name. 
+		
+		for(int i=0;i<all_element.size();i++) {
+			
+			WebElement element=all_element.get(i);
+			System.out.println(element.getText());
+			
+			
+		}
+	
+	============================Mutiple Objects(text name) Extraction from CNN top menu	============================
+		//When we access any area for the liks, we see all all links under that area are having same pattern like:
+	//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[3]/article/div/div/h3/a/span[2]
+	//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[5]/article/div/div/h3/a/span[2]
+	//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[9]/article/div/div/h3/a/span[2]
+	
+	
+	Here li[9] number is changing only so we just remove number from that li and get x path in WebElements like "top_Links" iterate that list as below:
+
+	
+		List<WebElement> top_Links=driver.findElements(By.xpath("//*[@id='header-nav-container']/div/div[1]/div/div[2]/nav/ul/li/a"));
+		driver.get("https://edition.cnn.com/");
+		/*
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[1]/a
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[2]/a
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[3]/a
+		 * As we can see li[1] tag is changing rest or same so we will use x path
+		 * //*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li/a
+		 * 
+		 */
+		 
+		
+		
+		
+		System.out.println(top_Links.size());
+		
+		for(int i=0;i<top_Links.size();i++) {
+			
+			System.out.println(top_Links.get(i).getText());
+			String url=top_Links.get(i).getAttribute("href");//Printing url
+			System.out.println("url"+url);
+	
+			
+			
+		}
+	===========================Again Multiple Object Extraction working and good example============================
+
+	
+	@Test
+	public void mutipleObjectExtraction() {
+		
+		browsers("Chrome");
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//Implicit globle wait.
+		driver.get("https://edition.cnn.com/");
+		
+		WebElement outBoxULTag=driver.findElement(By.xpath("//ul[@class='cn cn-list-xs cn--idx-0 cn-container_ED03BAA0-E1BF-D5E4-2FF0-E6CF17C3C0B4 cn--expandable cn--collapsed']"));
+	
+		List<WebElement> innerBoxlinks=outBoxULTag.findElements(By.tagName("a"));
+		
+		for(int i=0;i<innerBoxlinks.size();i++) {
+			String url=innerBoxlinks.get(i).getAttribute("href");
+			System.out.println(url);
+			//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[3]/article/div/div/h3/a/span[2]
+			//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[5]/article/div/div/h3/a/span[2]
+		}
+		
+		List<WebElement> element =driver.findElements(By.xpath("//*[@id='intl_homepage1-zone-2']/div[5]/div/div[1]/ul/li/article/div/div/h3/a/span[2]"));
+		//When we get pattern in that only li number is changing just pick that like above storre in webelement list and get text.
+		for(int i=0;i<element.size();i++) {
+			String namText=innerBoxlinks.get(i).getText();
+			System.out.println(namText);
+			//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[3]/article/div/div/h3/a/span[2]
+			//*[@id="intl_homepage1-zone-2"]/div[5]/div/div[1]/ul/li[5]/article/div/div/h3/a/span[2]
+		}
+		
+	}
+}
+	
+============================Again Multiple Object Extraction working with different approach============================
+	@Test
+	public void mutipleObjectExtraction() {
+		
+		browsers("Chrome");
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//Implicit globle wait.
+		driver.get("https://edition.cnn.com");
+		
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[1]/a
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[2]/a
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[3]/a
+		
+		//*[@id="header-nav-container"]/div/div[1]/div/div[2]/nav/ul/li[9]/a
+		
+		String first_Part="//*[@id='header-nav-container']/div/div[1]/div/div[2]/nav/ul/li[";
+		String second_Part="]/a";
+	
+		for(int i=1;i<=9;i++) {
+			
+			WebElement element=driver.findElement(By.xpath(first_Part+i+second_Part));
+			
+			System.out.println(element.getText());
+		}
+	
+		============================Substring Split Method============================
+			String myString = "url";
+			String[] splitString = myString.split("//");
+			String fwdslashbreaking[]=splitString[1].split("/");
+			System.out.println("Text="+fwdslashbreaking[1]);
+			
+	===============================IsElemtnPresentMethod()====================
+	public boolean isElementPresent(String elemetXpath ) {
+		//Limitation of this is if first element invisible then it wont check another one 
+		int size=driver.findElements(By.xpath(elemetXpath)).size();//findElements we are using cause only size work for it.,
+		
+		if(size==0) {
+			System.out.println("Size is 0 so element not present");
+			return false;
+		}
+		
+		if(driver.findElement(By.xpath(elemetXpath)).isDisplayed()&&driver.findElement(By.xpath(elemetXpath)).isEnabled()) {
+			System.out.println("Element is visible and enabled so returning true");
+			return true;
+		}
+		else {
+			System.out.println("Element is not visible and enabled so returning false");
+		return false;
+		}
+	}
+		
+		=========================Handaling Radio buttons========================	
+		@Test
+	public void radioButtons() {
+		
+		browsers("Chrome");
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//Implicit globle wait.
+		driver.get("https://www.chabadpotomac.com/templates/articlecco_cdo/aid/1094542/jewish/HS-Registration-Form-New-Student.htm");
+		
+		//Same as multi object Extractions we seek comman name of Radios name
+		
+		List<WebElement> allRadios=driver.findElements(By.name("reading_proficiency"));
+		
+		//Clicking on first Radio button
+		allRadios.get(0).click();
+		//Usually checked wont show in dom but we they are present and ccan get it.
+		System.out.println(allRadios.get(0).getAttribute("checked"));
+		System.out.println(allRadios.get(1).getAttribute("checked"));
+		System.out.println(allRadios.get(2).getAttribute("checked"));
+		
+		//Every time value attribute will not be available but here is available.
+		System.out.println("Getting Radio button value="+allRadios.get(2).getAttribute("value"));//getting well
+		
+		
+		driver.navigate().to("https://patient.labcorp.com/registration");
+		String getAttribute= driver.findElement(By.xpath("//label[text()='Male']")).getAttribute("Male");
+		String getText= driver.findElement(By.xpath("//label[text()='Male']")).getText();//this is working
+		
+		System.out.println("getAttribute="+getAttribute);
+		System.out.println("getText="+getText);
+		
+	}
+		
+		
+		
+		
+	================================Screen Shots of screen or perticular web element========================	
+		
+		public void takeScreenShot(String filePath){
+		// take screenshot- java object
+		// save screenshot in path
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+		// get the dynamic folder name
+		FileUtils.copyFile(srcFile, new File(filePath));
+		//test.addScreenCaptureFromPath("path of image", "xxxx");
+
+		} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+
+	}
+	
+	public void takeSceenShot(){
+		// fileName of the screenshot
+		Date d=new Date();
+		String screenshotFile=d.toString().replace(":", "_").replace(" ", "_")+".png";
+		// take screenshot
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			// get the dynamic folder name
+			FileUtils.copyFile(srcFile, new File(ExtentManager.screenshotFolderPath+screenshotFile));
+			//put screenshot file in reports
+			scenario.log(Status.FAIL,"Screenshot-> "+ scenario.addScreenCaptureFromPath(ExtentManager.screenshotFolderPath+screenshotFile));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void getElementScreenshot(WebElement  ele, String filePath)
+    {
+			// Get entire page screenshot
+			File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			BufferedImage fullImg;
+			try {
+			fullImg = ImageIO.read(screenshot);
+			// Get the location of element on the page , 100,150
+			Point point = ele.getLocation();
+			
+			// Get width and height of the element  -50,100
+			int eleWidth = ele.getSize().getWidth();
+			int eleHeight = ele.getSize().getHeight();
+			
+			// Crop the entire page screenshot to get only element screenshot
+			BufferedImage eleScreenshot= fullImg.getSubimage(point.getX(), point.getY(),
+			   eleWidth, eleHeight);
+			ImageIO.write(eleScreenshot, "png", screenshot);
+			
+			// Copy the element screenshot to disk
+			File screenshotLocation = new File(filePath);
+			FileUtils.copyFile(screenshot, screenshotLocation);
+			} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
+			
+			
+       
+    }
+	
+		
+		
+		
+	=======================ExplicitWait created method for Explicit wait=============================	
+	@Test
+	public void explicitWaits() {
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);//it check only the presense of element.
+		driver.get("https://www.awwwards.com/sites/khoa-le");
+	
+		driver.findElement(By.xpath("//a[text()='Register / log in']")).click();
+		//Exception of stale element not found shows cause element is present but not visible as light box appearing after 2 -3 sec
+		
+		//We can use Thread.sleep but it pauses the program.
+		
+		WebDriverWait webWait= new WebDriverWait(driver, Duration.ofSeconds(10));
+		webWait.until(ExpectedConditions.visibilityOfElementLocated(By.name("_username")));
+		
+		
+		//We can use below condition too
+		//webWait.until(ExpectedConditions.elementToBeClickable(By.name("_username")));
+		
+		isElementPresent("//input[@name='_username']");
+		
+		driver.findElement(By.xpath("//input[@name='_username']")).sendKeys("hello");
+	
+		
+		
+		
+		
+		//Explicit wait checks Presense and the visibiliti of element.
+	
+	}
+	
+	================================isElementPresent Method==================
+	This method is for xpath only we can make it for any locator like getObject method
+	public boolean isElementPresent(String elementXpath) {// only for xpath 
+		
+		WebDriverWait wait  = new WebDriverWait(driver, Duration.ofSeconds(10));
+		try {
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(elementXpath)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elementXpath)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(elementXpath)));
+		}catch(Exception e) {
+			return false;
+		}
+		
+		return true;
+   }
+	
+	
+	//*********objectLocators method to use any locator ********************	
+	public By objectLocators(String locator) {
+		
+		if(locator.endsWith("_id"))
+			return By.id(prop.getProperty(locator));
+		
+		else if(locator.endsWith("_name"))
+			return By.name(prop.getProperty(locator));
+		
+		else if(locator.endsWith("_css"))
+			return By.cssSelector(prop.getProperty(locator));
+		
+		else { 
+			return By.xpath(prop.getProperty(locator));
+		
+		}
+		
+   }	
+		Implemented here like this in property file give name like this.
+		driver.findElement((objectLocators("name_xpath"))).sendKeys("Sandeep");
+		available in Project >>RAW_FRAMEWORK_MAVENPROJECT_PILOTPROJECT_CONTINUE_FINAL-------------------------------------------26-E
+		
+		
+			=======================ExplicitWait created logic or piece of code like Explicit wait=============================	
+			We made below code to wait as some time Explicit does not work
+		int i=1;
+		while(i<=10) {// max 10 secs
+			if(driver.findElement(By.xpath("//input[@id='tos']")).isEnabled())
+				break;
+			else {
+				Thread.sleep(1000);
+				i++;
+			}
+		}
+		
+		
+		//*********Remaining Need to validate Drop down options********************
+     		
+     		List<WebElement> allOptionsList=select.getOptions();//Getting all the options
+     		
+     		String AllOptionsNeedToCompare="Gender,Male,Female";
+     		
+     		String arrayOfGender[] =AllOptionsNeedToCompare.split(",");
+     		
+     		
+     	
+     		for(int i=0;i<allOptionsList.size();i++) {
+     		
+     		System.out.println("Printing from dropdown="+allOptionsList.get(i).getText());
+     		System.out.println("Printing from array="+arrayOfGender[i].toString());
+     		
+     		if(!allOptionsList.get(i).getText().equals(arrayOfGender[i].toString())) 
+     		{
+     			System.out.println("List not same");
+     		}
+     		}
+		
+		
+		
+		
+		
+		
+		
+		====================Open window in ew tab(Selenium 4 feature)==================
+		//driver.switchTo().newWindow(WindowType.TAB);//Its a feature of Selenium 4 we can open window in new tab.
+		
+		
+		
+		
+		==================================Window Handle=====================================
+		
+		@Test
+	public void windowHandleTest() {
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://www.naukri.com");
+		
+		//Lets see how many windows are there on page
+		//set is un Ordered set but below set.iterator(); method will give you the ordered set.
+		Set<String> set=driver.getWindowHandles();
+		
+		System.out.println("Number of windows ="+set.size());
+		
+		
+		Iterator<String> itr=set.iterator();//it will give you the ids of windows  
+		
+		String mainWindowID=itr.next();//it will give the main window id
+		
+		String secondWindowID=itr.next();//it will give the second window id
+		String thirdWindowID=itr.next();//it will give the third window id
+		
+		System.out.println("mainWindowID="+mainWindowID);
+		System.out.println("secondWindowID="+secondWindowID);
+		System.out.println("thirdWindowID="+thirdWindowID);
+		
+		
+		driver.switchTo().window(secondWindowID);
+		//driver.close();//this will close the pop up so we can understand what is second and thired window.
+		
+		
+		/*driver.switchTo().newWindow(WindowType.TAB);//Its a feature of Selenium 4 we can open window in new tab.
+		
+		driver.manage().window().maximize();
+		*/
+		
+		driver.switchTo().window(thirdWindowID);
+		
+		
+		//driver.quit() >> it closes all windows and selenium session ; and driver.close();>>> it closes under focused window 
+		
+		
+		/*driver.switchTo().window(mainWindowID); //when it will not work below will work.
+		driver.switchTo().defaultContent();
+		*/
+	}
+	
+		
+		
+		
+		==================================Collection API Set=========================
+		//Set holds unique elements > mean no duplicate element
+		//no final size >> it grows dynamicly means if we sysout before size would show 0 but if we pul last , it will give accordingly.
+		// no indexing like List >> means when we try to print it, it prints in any order.
+		
+		
+		Set<String> set= new HashSet <String>();
+		
+		System.out.println("set-Size getting on top="+set.size());
+		set.add("Sandeep");
+		set.add("Pradeep");
+		set.add("Debashish");
+		set.add("Akhilesh");
+		
+		set.add("Akhilesh");//Set holds unique elements > mean no duplicate element, size wont change
+		
+		System.out.println("set-Size getting on bottom="+set.size());  // it grows dynamicly means if we sysout before size would show 0 but if we pul last , it will give accordingly.
+		
+		Iterator<String> itr=set.iterator();
+		
+		//We can use any loop but while is best to use.
+		
+		/*for(int i=0;i<set.size();i++) {
+			System.out.println("Printing from For loop"+itr.next());
+		
+		
+		}*/
+		
+		
+		while(itr.hasNext()) {
+			System.out.println("Printing from While loop"+itr.next());
+		}
+		
+		
+		
+		
+	================================Handling Alert Pop ups==============================	
+	@Test
+	public void windowHandleTest() {
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+		
+		driver.findElement(By.xpath("//input[@id='login1']")).sendKeys("abc");
+		driver.findElement(By.xpath("//input[@title='Sign in']")).click();
+		
+		//some time alert comes little late so in that case we can use Webdrover wait
+		WebDriverWait explicitwait= new WebDriverWait(driver, Duration.ofSeconds(20));
+		explicitwait.until(ExpectedConditions.alertIsPresent());
+		
+		
+		
+		Alert alert=driver.switchTo().alert();
+		
+		System.out.println("Text available on alert Pop up="+alert.getText());
+		
+		alert.accept();//clicks on OK button
+		
+	//	alert.dismiss();//cancel button if available on pop up some time
+	
+		
+		// if you want to bring back control to main window
+		driver.switchTo().defaultContent();
+		
+	}
+		
+		
+		
+		
+		
+		
+		====================================Handling webTable=====================
+		@Test
+	public void webTableTest() {
+		
+		//Every Web table we get like
+		//<table class='datatable'> 
+		//<tr>== row of table and td tag is column of each row
+		//<table class='datatable'> /tbody/tr[3]/td[4] it means 3rd row and 4rth column.
+		//*[@id='leftcontainer']/table/tbody/tr[1]/td *** if we remove td number it will become genric for that row.
+		//*[@id='leftcontainer']/table/tbody/tr/td[4]***(If i remove tr number it will represent whole 4rth column)
+		//*[@id='leftcontainer']/table/tbody/tr ********(If i put only tr it will represent whole rows of table)
+		
+		
+		//now in this web table we want current price of any given company name if com name is dynamic.
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://money.rediff.com/gainers/bse/daily/groupa?src=gain_lose");
+		
+		
+		//*[@id='leftcontainer']/table/tbody/tr/td[1] >> here it will give first row and first column
+		List<WebElement> listOfCompany_Name=driver.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr/td[1]"));
+		System.out.println("Size of or number of Comapany names="+listOfCompany_Name.size());
+		
+		List<WebElement> CurrentPriceColumn=driver.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr/td[4]"));
+		System.out.println("Size of or number of Comapany' current price names="+CurrentPriceColumn.size());
+		
+		//both size should be matched.
+		
+		String reqCompany_NameToPrint="Mahindra Lifespace D";
+		for(int i=0;i<listOfCompany_Name.size();i++) {
+			
+			if(reqCompany_NameToPrint.equals(listOfCompany_Name.get(i).getText())) {
+				
+				System.out.println("Comapany Name="+listOfCompany_Name.get(i).getText()+"-------And Price of this company name is="+CurrentPriceColumn.get(i).getText());
+				break;
+			}
+			
+		
+		}
+		=============================WebTable Method==========================
+		public int getTablerowData(String data) {
+		
+		List<WebElement> Rows=driver.findElements(By.xpath("//*[@id='leftcontainer']/table/tbody/tr"));
+		
+		for (int i=0;i<Rows.size();i++) {
+			
+			WebElement RowElement=Rows.get(i);
+			
+			List<WebElement> AllCells=RowElement.findElements(By.tagName("td"));
+			
+			for(int j=0;j<AllCells.size();j++) {
+				
+				//System.out.println(AllCells.get(j).getText());
+				
+				
+				if(data.equals(AllCells.get(j).getText())) {
+
+					return j+1;
+				}
+			}
+			
+			
+		}
+		return -1;
+		
+		
+		
+		
+		
+	
+		
+		
+				}
+			
+		
+		
+		method calling:
+			String CompanyName="Indus Towers";
+		int number=getTablerowData(CompanyName);
+		Assert.assertTrue(number !=-1, "Company name not found");
+	
+		String price=driver.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr["+number+"]/td[4]")).getText();
+		System.out.println("CompanyName="+CompanyName+" And price="+price);
+		
+		
+		
+		
+		
+		
+		=============================waitForPageLoad Java Script function==============================================
+		public void waitForPageToLoad() throws InterruptedException{
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		int i=0;
+		// page to load 100% -- wait for max 20 secs
+		while(i!=10){
+			String state = (String)js.executeScript("return document.readyState;");
+			System.out.println(state);// complete, loading, interactive
+	
+			if(state.equals("complete"))
+				break;
+			else
+				Thread.sleep(2000);
+	
+			i++;
+		}
+		// check for jquery/ajax status
+		
+		i=0;
+		while(i!=10){
+
+			Long d= (Long) js.executeScript("return jQuery.active;");
+			System.out.println(d);//0,1
+			if(d.longValue() == 0 )
+				break;
+			else
+				Thread.sleep(2000);
+			i++;
+
+		}
+		
+	}
+		
+		
+		
+		
+		=========================================================Java Script understanding in selenium scroll command=============================
+		@Test
+	public void handle_JavaScriptTest() {
+		
+		
+		
+		browsers("Chrome");
+		
+		
+		
+	
+		//driver.get("https://money.rediff.com/gainers/bse/daily/groupa?src=gain_lose");
+		
+		JavascriptExecutor javascriptExecutor= (JavascriptExecutor) driver; //Object casting so we can use java script. 
+		
+		javascriptExecutor.executeScript("window.location='https://www.linkedin.com/login'"); //window.location is javascript command and works as driver.get() method
+		
+		driver.manage().window().maximize();
+		
+		javascriptExecutor.executeScript("document.getElementById('username').value='Hello'");// its like driver.send keys
+		
+		//Browser understands only java script command , when we type any command in selenium it gets converted in java script.
+		
+		javascriptExecutor.executeScript("window.scrollTo(0,100)");//This is for sclolling as selenium usually dont have scroll cammand.
+		
+		
+}
+		
+		
+		
+		
+		================================Actions ,mouse movement slider used scroll bottom used===mouse hover============================
+		
+		
+		@Test
+	public void handle_JavaScriptTest() throws InterruptedException {
+		
+		// Actions class is used for the gestures Like:
+		// moving mouse or mouse howver
+		//drag drop element
+		//By moving the mouse if we want to click somewhere
+		
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://www.americangolf.co.uk/");
+		
+		Actions actions= new Actions(driver); //creating Actions object
+		
+		WebElement  elementGolfClubs=driver.findElement(By.xpath("//*[@id='header-navigation']/div[1]/ul/li[2]/a"));
+		
+		actions.moveToElement(elementGolfClubs).build().perform();// Will do mouse hover, build().perform() is must write every Actions class otherwise it will not work
+		
+		
+		//Some time it takes time to appear the element so we use Explicit wait:
+		WebDriverWait webWait= new WebDriverWait(driver, Duration.ofSeconds(10));
+		webWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='CLUBS_1']/ul/li[3]/ul/li/a/span")));
+		
+		String putters_Link=driver.findElement(By.xpath("//*[@id='CLUBS_1']/ul/li[3]/ul/li/a/span")).getText();
+		System.out.println("putters_Link="+putters_Link);
+		driver.findElement(By.xpath("//*[@id='CLUBS_1']/ul/li[3]/ul/li/a/span")).click();
+		
+		waitForPageToLoad();
+		//This is the best way if we get same class two elements just find which one we want like it highlight and use below and get that.
+	 WebElement SecondndElement_Slider=driver.findElements(By.xpath("//div[@class='noUi-handle noUi-handle-lower']")).get(1);
+		
+		int y=SecondndElement_Slider.getLocation().y; //here we are getting the coordinate of second element and save in int y
+		waitForPageToLoad();
+		JavascriptExecutor javascriptExecutor= (JavascriptExecutor) driver;
+		javascriptExecutor.executeScript("window.scrollTo(0,"+(y-80)+")");//as it scrolled to much so subtracting 80
+		
+		actions.clickAndHold(SecondndElement_Slider).moveByOffset(100, 0).release().build().perform();//it is for click any element hold and moveByOffset gives coordinate and release will release hold of mouse.
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		=============================Select one in Two highligheted element =====used above===============
+		//This is the best way if we get same class two elements just find which one we want like it highlight and use below and get that.
+	 WebElement SecondndElement_Slider=driver.findElements(By.xpath("//div[@class='noUi-handle noUi-handle-lower']")).get(1);
+		
+		
+		
+		
+		
+		
+		====================================Random Class============Actions class Actions ,mouse movement===========================
+		
+		@Test
+	public void handle_JavaScriptTest() throws InterruptedException {
+		
+		// Actions class is used for the gestures Like:
+		// moving mouse or mouse howver
+		//drag drop element
+		//By moving the mouse if we want to click somewhere
+		
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://www.americangolf.co.uk/");
+		
+		Actions actions= new Actions(driver);
+		
+		WebElement  elementGolfClubs=driver.findElement(By.xpath("//*[@id='header-navigation']/div[1]/ul/li[2]/a"));
+		
+		actions.moveToElement(elementGolfClubs).build().perform();// Will do mouse hover, build().perform() is must write every Actions class otherwise it will not work
+		
+		
+		//Some time it takes time to appear the element so we use Explicit wait:
+		WebDriverWait webWait= new WebDriverWait(driver, Duration.ofSeconds(10));
+		webWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='CLUBS_1']/ul/li[3]/ul/li/a/span")));
+		
+		List<WebElement> allLinks_underGolfClubs=driver.findElements(By.xpath("//div[@id='CLUBS_1']/descendant::a"));
+		
+		for(int i=0;i<allLinks_underGolfClubs.size();i++) {
+			
+			System.out.println(allLinks_underGolfClubs.get(i).getText());
+		}
+		
+		//Use of Randome class
+		Random random= new Random();
+		int RandomeNomberOfGolfmenue=random.nextInt(allLinks_underGolfClubs.size());
+		
+		allLinks_underGolfClubs.get(RandomeNomberOfGolfmenue).click(); //clicking on any randome number link
+		
+		
+		
+	 ****	When we use single command to do we can use 
+		actions.moveToElement(elementGolfClubs).perform(); we can use perform only
+		
+		but when we use two commands in sigle line like:
+		suppose there is a search box where we have to get  presses tab key and enter key by keyboard here we use build and perform both commands. 
+		actions.sendkeys(keys.Tab).sendkeys(keys.ENTER).build().perform();
+		
+		
+		
+		
+		
+		
+		
+	=====================================Handling IFrames===========================================================
+		@Test
+	public void Handling_FramesTest() throws InterruptedException {
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://paytm.com");
+		
+		WebDriverWait webWait= new WebDriverWait(driver, Duration.ofSeconds(10));
+		webWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='app']/div/div[2]/div[2]/div[3]/div[4]/div")));
+		
+		driver.findElement(By.xpath("//*[@id='app']/div/div[2]/div[2]/div[3]/div[4]/div")).click();
+		
+		
+		
+		//Few important points about "Frames"
+		/*Because it is a Frame
+		 * Frame is a kind of a page which embeded somewhere inside the page.
+		 * How to detect it is a frame just open mozilla which is very good for frame capabilities and open site
+		 * if we do wright click main site in chrome, "This frame" option will not show
+		 * But on pop up of Fram like paytm scan pop up if we wright click "This Frame" option comes up in mozilla.
+		 - There may be multiple of frames in page so can we detect:
+		 - Ask devloper and other option is to do with selenium.
+		 
+		*/
+		
+		
+		List<WebElement> Frames=driver.findElements(By.tagName("iframe"));
+		
+		System.out.println("Total no of frams available on page are="+Frames.size());
+		driver.switchTo().frame(0);//as we have only one frame
+		
+		WebDriverWait webWait1= new WebDriverWait(driver, Duration.ofSeconds(10));
+		webWait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='main-container']/div/div/div/div/div/div[2]/qr-code-login/div/div[2]/div")));
+		
+		
+		String text=driver.findElement(By.xpath("//*[@id='main-container']/div/div/div/div/div/div[2]/qr-code-login/div/div[2]/div")).getText();
+		System.out.println("text="+text);
+		
+		driver.switchTo().defaultContent();//It uses to come back to main window.
+		
+		
+		// *****Now suppose there are 5 iframes available how we can differenciate which one we want to deal with.
+		
+		for(int i=0;i<Frames.size(); i++) {
+			
+			//switching to frames one by one
+			driver.switchTo().frame(i);
+			
+			//Check the presense of element if element present then break the loop.
+			int size=driver.findElements(By.xpath("//*[@id='main-container']/div/div/div/div/div/div[2]/qr-code-login/div/div[2]/div")).size();
+			
+			if(size==0) { //size 0 means element not found 
+				
+				driver.switchTo().defaultContent();//It uses to come back to main window.
+			} 
+			else
+				break; //if size is not 0 then means we found the element and break the loop and start interecting with element 
+			
+		}
+		
+		String text1=driver.findElement(By.xpath("//*[@id='main-container']/div/div/div/div/div/div[2]/qr-code-login/div/div[2]/div")).getText();
+		System.out.println("Just doing again if we will have more than 1 frames ="+text1);
+		
+		
+		driver.switchTo().defaultContent();//and once we done just we get back to main window.
+}
+		
+		
+		
+		
+		=======================================Auto Ajax ==Good Example of get all google text==========================
+		@Test
+	public void Handling_AjaxTest() throws InterruptedException {
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://www.google.com");
+		driver.findElement(By.name("q")).sendKeys("Hello");
+		
+		Thread.sleep(1000);
+		
+		List<WebElement> Elements=driver.findElements(By.xpath("//div[@class='sbl1']/span"));
+		
+	
+		
+		for(int i=0;i<Elements.size();i++) {
+			
+			WebElement element=Elements.get(i);
+			System.out.println(element.getText());
+		}
+		
+		
+		
+		
+		
+		
+		==================================Handling Cookies=============================
+		import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.Cookie;
+import org.testng.annotations.Test;
+
+		@Test
+	public void Handling_FramesTest() throws InterruptedException {
+		
+		browsers("Chrome");
+		driver.manage().window().maximize();
+		driver.get("https://cnn.com");
+
+	
+		
+		
+
+
+		
+		Set<Cookie> cookies= driver.manage().getCookies();// get all cookies in set
+		
+		Iterator<Cookie> it = cookies.iterator();
+		
+		while(it.hasNext()){
+			Cookie c = it.next();
+			System.out.println(c.getName()+" --- "+ c.getValue());
+			if(c.getName().equals("countryCode")){
+				driver.manage().deleteCookie(c);// delete cookie
+				Cookie mycookie = new Cookie("countryCode", "UK");
+				driver.manage().addCookie(mycookie);// add cookie
+			}
+		}
+		
+		System.out.println("--------------------------");
+		
+		cookies= driver.manage().getCookies();
+		
+	     it = cookies.iterator();
+		
+		while(it.hasNext()){
+			Cookie c = it.next();
+			System.out.println(c.getName()+" --- "+ c.getValue());
+			if(c.getName().equals("countryCode")){
+				driver.manage().deleteCookie(c);
+			}
+		}
+		
+	}
+	//changes country code from In to UK
+	
+		
+		
+		
+		==============================Handling Download and Upload of files but we have to check by videos===========================
+		https://www.qtpselenium.com/selenium-training/module/539/15744
+		FirefoxOptions options = new FirefoxOptions();
+			FirefoxProfile prof = new FirefoxProfile();
+			/*
+			 * FireFox and IE gives a pop up to ask to download the file, chrome it is easy
+			 * open fireFox browser and type > about:config
+			 * now set or type > preference browser.download.folderList to make customize.
+			 * now type > browser.download.dir >your download folder location like this D://AutomationDownloadAndUpload
+			*/
+			prof.setPreference("browser.download.folderList", 2);// will define my download folder
+			prof.setPreference("browser.download.dir", "D://AutomationDownloadAndUpload");
+			
+			
+			//https://www.freeformatter.com/mime-types-list.html
+			//Below we are defining the mime types like excel, world pdf etc.
+			prof.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+			
+			options.setProfile(prof);
+			WebDriver driver = new FirefoxDriver(options);
+			driver.get("https://www.qtpselenium.com/downloads/download.html");
+			driver.findElement(By.linkText("pdf download")).click();
+		
+		
+		
+		
+		
+		=========================Docker============================
+		1 What is docker :> suppose we have to use a vertual machine in that we want 
+		different -diff applications , node js(1 gb) , slenium(2gb), sql server(3gb)...but my actual operating system has only 8 gb space 
+		and I want to use multiple vertual machines then no space will be remaing.
+		
+		2. To avoid such spacing setuetions we use docker > In docke we use containers in that we can use saparate app like sql in one container.
+		and others are different container
+		3. Docker use our actual OS kernal to run apps available in container
+		4. to check docker is installed cmd is >docker -v
+		
+		
+		
+		
+		
+		===================================Jenkins================================
+		1. when we work in tesm and every one has one source code managemant system(SCM).
+		for checkin and check out > That is GIT what we are learning.
+		
+		2. A,B,C,D,E and F members are using GIT, A.java ,B.java ,C.java 
+		3. Somebody deleted any file or made any mistake and when any one will get check out next day compilation error will show up for every one.
+		  And blame game will start .
+		 
+		4. To avoid this thing we will use Jenkins.
+		
+		5. We integrate GIT with Jenkins and Jenkins poll every time minut to GIT that is there any code change.
+		6. If Jenkins finds any code change then at that moment it will build the the code and is any build fails it finds.
+		Jenkins mail to every team members that build got failed.
+
+		7. So Jenkins is continuous integration tool > Who keep eye on GIT on which number of users integrating continuously.
+		
+		8. Jenkins also used for schedule build/Run at any time > like mid ningt or any time
+		
+		A. First we Download Jenkins 
+		https://www.jenkins.io/download/
+		Download Jenkins 2.263.4 LTS for: > click on "Generic Java package(.war) "
+		save in any folder and go to that location in cmd > java -jar jenkins.war >>Jenkins is fully up and running
+		
+		B. http://localhost:8080/login?from=%2F
+		admin/439372b3bdc24bfd9c0f59a6b6c56bfa
+		
+		C. Go to New Item > Create any Project like DummyCode > select Freestyle Project and click on OK
+		
+		D. Go to tab , Source Code Management >Where we can see by default none selected , but as we install GIT or SVN it will show here.
+		
+		E. Now go to section build > Build steps(build means actually running) > Execute window batch command > write > echo Hello Jenkins > Save it > Build now from left pan > below it will start building progress.
+		F. Click on build progress > Consol out put > Hello Jenkins will be printed
+		G. Click on Jenkin logo all projects created will be displayed just go to that projects > Configure (like edit)> and update if want like %time% 
+		
+		
+		Build Periodically----->
+		1. Configure any project, Build Triggers > Select Build periodically > Click the question mark of this option > help discreption will open
+		
+		2. * * * * * means run this project in every minute
+		3. H/20  * * * * Means it will run after 20 min(H/2 means every 2 min )
+		4. H H/3  * * *  Means it will run after 3 hours
+		
+		Build > Invoke ant > type compile run
+		Build File path > build.xml path of ur project > save it
+		now build and see consol out put > build success will show and show how many run test success 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		--------My old notes of Jenkins-------- 
+		Jemeter through jenkins:
+
+1. First Set Up Jenkins > download jenkins.war> go to war folder and open command prompt.
+2. Copy performnce.hpi file to Jenkins > plugin > copy performnce.hpi
+3. Enter command java -jar jenkins.war
+4. Open https:localhost:8080
+5. Go to new Item > Freestyle project > ok > configure >test it  ver > nul
+6. jemer > bin > user.properties > jmeter.save.saveservice.output_format=xml
+7. Now if it is running then again same go to configure and write below script:
+D:\Sandy\SetUps\apache-jmeter-3.1\bin\jmeter -Jjmeter.save.saveservice.output_format=xml -n -t "\D:\Sandy\JMETER TEST PLAN\google.jmx" -l "\D:\Sandy\JMETER TEST PLAN\Testing.csv"
+8. Now build it.
+9. Also need to set up jmeter in environment veriable :
+My Computer > properties > Advanced System settings > Environment variables > Under system variables, select PATH > Add D:\JMETER\apache-jmeter-3.1\bin to your path at the end.
+		
+		
+		
+		
+	====================testng.xml=================	
+	<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Hotel Booking Suite">
+  <test  name="Create Booking Test">
+    <classes>
+    <class name="testcases.BookingSearch">
+    <methods>
+    <include name="seachHotel"/>
+    <include name="selectHotel"/>
+    <include name="enterGuestInfo"/>
+    </methods>
+    </class>
+    
+    
+      
+      <class name="testcases.PaymentManager">
+    <methods>
+    <include name="applyDiscount"/>
+    <include name="makePayment"/>
+    </methods>
+    </class>
+      
+      
+      <class name="testcases.CustomerCommunications">
+    <methods>
+    <include name="checkEmail"/>
+
+    </methods>
+    </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+	
+		
+================================================Excel file format================		
+//HSSFWorkbook work book for xls format and above(XSSFWorkbook) on we use for xlsx format		
+		
+		
+		
+		
+		
+		
+=================================Jenkins running notes============================		
+https://www.qtpselenium.com/selenium-training/module/542/14813
+https://www.youtube.com/watch?v=MlvNXFdPhB8&t=125s
+go to the war file location through cmd and typy:
+java -jar jenkins.war
+
+1. Jenkins runs on port 8080 some time other resource blocking it that time just restart the pc and try to run.
+http://localhost:8081/login?from=%2F
+admin/439372b3bdc24bfd9c0f59a6b6c56bfa  (this is for port 8080)
+
+
+create a freestyle project go to configure > none will be displayed means nothig selected 
+
+A. Project DummyProject  > Build>>>   echo Showing Current Time= %time%
+B.Buil
+
+
+
+Here is the location to get password:
+D:\Sandy\SetUps\JENKINS JAR NEW RUNNING
+
+
+go to command prompt and go to jenkins war like : D:\Sandy\SetUps\jenkin war
+hit 
+java -jar jenkins.war --httpPort=8081
+use password: c1d54b985fb646caa2ec40afb1b06a4b
+
+
+
+http://localhost:8081/login?from=%2F
+admin/439372b3bdc24bfd9c0f59a6b6c56bfa
+
+C:\Users\Sandeep\.jenkins : here u can see all downloaded plugin.
+		
+		
+	New Genkins to get option git	
+	http://localhost:8080/	
+	C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\secrets
+	admin/33904a2599b84dd5bfde7b580c0ede88
+	
+	As we have git select option clone and get location https://github.com/Sandy228/MySeleniumRepository.git	
+	open jenkinf create freestyle project select git give location copied 
+	Poll scm every minut     *
+	Execute window batch command:> Echo something changed.
+		D:\Sandy\SetUps\Git EXE\MyLocal_Git_Repository
+=======================================Git Hub==========================================		
+Username: Sandy228
+Email: newalkar.sandeep@gmail.com
+Password:09893992029New
+https://github.com/Sandy228/MySeleniumRepository
+https://git-scm.com/download/win
+dowload git >>> next next next and got to Command prompt after installation type git
+you will see something means git is installed.
+
+1. Now Create local git repo as folder.
+2. For sample just make a file project.txt wrire something in it.
+3. CMD go to my local repo folder and wite command to initialize git:
+git init
+
+it will say "Initialized empty Git repository in D:/Sandy/SetUps/Git EXE/MyLocal_Git_Repository/.git/"
+
+4. .git will be in local repo folder just enable hide commands option so it will be shown.
+
+5. type : git status >> dummProject will be in red means this project not shifted to local repository.
+
+6. Git register username and mail to local repo:git config --global user.name "Sandy228"	
+git config --global user.email "newalkar.sandeep@gmail.com"
+
+7. git add . all the folder(Projects) to staging
+8. git add "foldername" only this will be added.
+		
+9. git commit -m "firstcommit"		>>moved to local repo ,one file changed will show.
+10.git remote add origin https://github.com/Sandy228/MySeleniumRepository.git
+11.git push -u origin master(used to push local repo to git repo)		
+	
+	after new file:	
+	git status	
+	git add . >> staging
+	git commit -m "changed"  >> moving to local
+	git push -u origin master	
+	
+	Check file is commited
+		
+		
+========================================Jenkins and git hub running in dell==============================================
+Username: Sandy228
+Email: newalkar.sandeep@gmail.com
+Password:09893992029New
+
+1. git init
+2. git config --global user.email "newalkar.sandeep@gmail.com"
+3. git config --global user.name "Sandy228"
+3. git add MyAutomationProject    (adding to staging area)
+4. git commit -m "first local"     (commiting to my local repository)
+5. git remote add origin https://github.com/Sandy228/Automation1.git (registering to github repository)
+6. git push -u origin master       (pushing local repository to remote git repository)
+
+
+
+
+Jenkins:- Go to jenkins create project
+2. Git Selecting >> Repository URL: https://github.com/Sandy228/Automation1.git
+3. go to build section > Invoke top level maven target.
+4. give only test in gols dont give pom.xml path save and build now.
+5. consol out put get error no pom found and get jenkins repository 
+C:\Users\Jyoti\.jenkins\workspace\MyAutomationProject_Jenkins\MyAutomationProject
+6. now give this path to POM section in jenkins under goal.
+C:\Users\Jyoti\.jenkins\workspace\MyAutomationProject_Jenkins\MyAutomationProject\pom.xml 
+
+
+
+jenkins mail configuration:
+Letme!n!
+
+Rekha Newalkar
+rnewalkar61@gmail.com
+http://localhost:8080/
+sandeep/sandeep
+
+https://www.youtube.com/watch?v=mb8WOHejlT8
+https://stackoverflow.com/questions/35347269/javax-mail-authenticationfailedexception-535-5-7-8-username-and-password-not-ac
+https://myaccount.google.com/
+In the "Security" section, select 2-Step Verification. You might need to sign in.
+Select Turn off.
+Two Step Verification should be turned off.
+Allow Less Secure App(should be turned on).
+
+		
+===============================================Cucumber framework=========================================
+1. BDD means behaviour driven devlopment.
+2. BDD official site https://cucumber.io/
+3. Cucumber is one of the effective tool which is implimenting behaviour driven devlopment.
+4. Lets install cucumber in eclipse
+5. following url in install new softwar will work:
+https://cucumber.github.io/cucumber-eclipse-update-site-snapshot
+http://cucumber.github.com/cucumber-eclipse/update-site
+
+
+My first Cucumber Project:
+
+- one is Feature file under test resources folder need to create holiday.feature
+- make a class which will impliment feature file in step definition class like :MyHoliday_StepDefination
+- MyRunner to run the project
+- Make sure package name of step defination(package com.cucumber;) should be same in test/resourse under feature file lie.
+- Start and End symbol of step defination ^ $
+
+
+My first Cucumber Project_Passing_Parameters:(passing parameters from feature file to step definition)
+
+- Here are some regular expression which will help us while passing parameters.
+1. [a-zA-Z]{1,} -->Any number of alphabet like any city name state name etc
+2. (\\d+) -->> Any digit
+3. [^\"]*-->> anything(apha numeric spaces etc)
+4. (.*) - list
+5. [a-zA-ZO-9]{1,} Alpha numeric
+
+passing Dynamic data in list A type:
+And We are 5 adults
+    |A|B|C|D|E| it is pipe saparated and system will treat as list
+    
+    @And("^We are (\\d+) adults$")
+	public void we_are(int adult_Count,List<String> names) {
+		System.out.println("We are "+ adult_Count +" adults and names are= "+names.toString());
+	} 
+	
+Passing Dynamic data in list with name and age also B type:
+And We are 5 adults
+    |Adult1|Adult2|Adult3|Adult4|Adult5|
+    |	A  |   B  |	  C  |	 D  |	E  |
+	|	20 |   30 |	  40 |	 50 |	60 |
+	
+structure of it like	
+big list under it there will be two maps
+1 is Adult1 A
+2nd is Adult1 20
+
+- Scenarios mentioned in feature file will be executed one by one serially
+- But if we have multiple feature files then, any featur file will be executed first or second
+so scenarios should be indipendent.
+
+6. Running different sets of data:
+ And We want to book flight to <Destination> from <FromDate> to <Todat>
+    And return flight on 2nd December 2020
+    
+    Examples:
+    |Destination|FromDate					|Todat							|
+    |Delhi			|2nd December 2020|10th December 2021 |
+    |America		|5th December 2020|11th April		 2021 |
+    
+    
+    
+7. Before and After scenarios we can use like test NG also called Hooks
+8. We can run perticular scenario like @BookHotel by mentioning in 
+@Before("@BookHotel")
+	public void beforeScenario() {
+		System.out.println("================BeforeSecenarios===============");
+	}
+
+
+9. For not repeating the stuffs we use Background
+Background:
+  Given I live in Jaipur
+    And I want to go on holiday
+    And We are 5 adults
+    |Adult1|Adult2|Adult3|Adult4|Adult5|
+    |	A    |   B  |	  C  |	 D  |	  E  |
+	  |	20   |   30 |	  40 |	 50 |	  10 |
+
+
+10. Cucumber Run Options:
+- there may be we can have multiple feature files and we want to run optionally
+- like buyproduct.feature and holiday.feature
+- I created saparate class for buyproduct.feature but as all scenarios are independent i can write buyproduct scenario 
+in holiday's feature's class.
+- Before after will work for both feature files or dependent class.
+
+Cucumber Run Options:
+-dryRun = false, //dryRun = true then it does not execute any scenario just check every thing is fine or not 
+-strict=true,//suppose given string is not matching and trinct is false then no error it will give.
+-monochrome=true, //Out put will give in proper format like 2 test pass 3 fail like that.
+- features= {"src/test/resources/"}, //means all feature files are under the resources folder.
+				//features= {"src/test/resources/featurs/ if we give this location means only holiday feature will run.
+-glue ={"com.cucumber"},//will find all java test scenarios under this package.
+-plugin= { "pretty",
+				"html:target/site/cucumber-html","json:target/cucumber1.json"}
+		
+		//pretty is good for consol formatting, if remove pretty , rest will generate report in json and html format
+-tags= {"@BuyProduct"}//will run particular feature file
+		
+
+Cucumber Assertions():
+
+need dependency in POM
+<dependency>
+    <groupId>org.assertj</groupId>
+    <artifactId>assertj-core</artifactId>
+    <version>3.10.0</version>
+    <scope>test</scope>
+</dependency> 
+
+assertThat("A").isEqualTo("B");
+	  assertThat("A".equals("B")).isTrue();// evaluating should be true but it is false.
+
+ // assertThat("A").isEqualTo("B");
+	 // assertThat("A".equals("B")).isTrue();// evaluating should be true but it is false.
+	  //assertThat("My Home PageXX").isEqualTo("My Home Page");
+	//  fail("Failing some reason");
+	
+	
+	SoftAssertions softAssert= new SoftAssertions();
+	 softAssert.assertThat("A").isEqualTo("B");
+		  softAssert.assertThat("My Home PageXX").isEqualTo("My Home Page");
+	
+	
+11. Cucumber Run option with TestNG:-
+Same thing we have to put only follow:
+public class MyRunner extends AbstractTestNGCucumberTests
+
+12. If we want to run with maven a surefire plugin should be added and Runner java file name should ends with "Test".
+
+Running with Maven Junit:
+If we want to run by Junit through maven put "Test" at its end in Runner file and not e=need to extend any class
+
+Running with Maven TestNG:
+public class MyRunner extends AbstractTestNGCucumberTests
+If we want to run by Junit through maven put "Test" at its end in Runner file and not e=need to extend any class
+
+
+Cucumber FramWork:
+One step definition class does not allow to extends another step definition class.
+This prob will solve by Pico container Injection
+Depencency we need to add:
+<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-picocontainer</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+
+//Due Pico container injection Webcontainer creats object of own and passes to the step definition class' contructor.
+Also can pass object in multiple step definition classes
+Question arises Is is making 2 different object objects for both step definition classes?
+So we change the object value A to B in Open Browser(after print statement) as Open browser step definition comes first than navigate step
+So in Navigate  "B" is being printed means only one object is being created by PIco container.
+means single instance is being created by PICO container
+
+PICO CONtainer Concept: When system see in step definition class WebConnector refrence in its own constructor then automatically 
+Webconnector creates object and supply to Step definition Webconnector refrence
+it happens due to PICO Container dependency or jar files, And imp is it creates objects only one time.
+
+
+
+==========================Cucumber Webdriverwait to get object and print the exception===============
+public WebElement getObject(String objectKey) {
+		WebElement e=null;
+		WebDriverWait webWait= new WebDriverWait(driver, 10);
+		try {
+			if(objectKey.endsWith("_xpath")) {
+			e= driver.findElement(By.xpath(prop.getProperty(objectKey)));
+			webWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(prop.getProperty(objectKey))));
+			}
+			else if(objectKey.endsWith("_id")) {
+				e= driver.findElement(By.xpath(prop.getProperty(objectKey)));
+				webWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(prop.getProperty(objectKey))));
+			}
+			else if(objectKey.endsWith("_css")) {
+				e= driver.findElement(By.cssSelector(prop.getProperty(objectKey)));
+				webWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id(prop.getProperty(objectKey))));
+			}
+			
+			else if(objectKey.endsWith("_name")) {
+				e= driver.findElement(By.cssSelector(prop.getProperty(objectKey)));
+				webWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.name(prop.getProperty(objectKey))));
+			}
+			
+		}
+	catch(Exception ex) {
+		//report the failure 
+		ex.printStackTrace();
+		ex.getMessage();
+	}
+		return e;
+	}
+	
+
+==============================RestAssured==========================
+Officialsite
+https://github.com/rest-assured/rest-assured/wiki/ReleaseNotes42
+
+
+=========================Handson,Practice=========================
+1. Properties file should be created in test base class constuctor.
+2. SoftAssertion 
+is lies in testng so only test cases it will work, so we will apply it in test cases
+
+assertAll() is nesssesory for soft assertion at bottom line of test case 
+softassert.assertEquals(Actual_DrName, prop.getProperty("DRNameTitle"));
+as it is in test case so proper error message is showing in consol out put  :
+The following asserts failed:
+	Title not matching,
+	expected [Dr. Shishir Chandrashekhar1] but found [Dr. Shishir Chandrashekhar]
+
+
+But if you want same above proper error message in report in report ItestResult under ITestListner
+then in listner entry we need in our suite
+and set attribute need to sent test object to listners
+
+
+Soft Assertion can be converted as hard assertion like
+public void hardFailure(String message) {// fail in extent report, test ng and stop the test
+		
+		logFailure(message); // fail in extent reports
+		softassert.fail(message); // fail in test ng
+		softassert.assertAll(); by this imediate line it will fail at this line only
+	}
+
+
+
+
+=================Rest Assured qtp==================================
+1. GET: Hitting twitter is get like retriving data from server
+   Post:Sending username password to server that is post
+2. Put rest.jar on any location and fire a command java -jar rest.jar   	
+
+Now let understand the request:
+http://localhost:8080 >> base usrl
+http://localhost:8080/student/list >>> student is base path
+http://localhost:8080/student/list  >> after base path like student is your end points
+
+Postman:
+Here we can set the limit
+1. http://localhost:8080/student/list?program=Financial Analysis&limit=3 
+2. Get request body is disabled means we can provide body
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+		
+C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\POM_PioletProj
+
+		
+		
+		====================Need to do practice===============
+		https://www.qtpselenium.com/selenium-training/module/530/15625
+		Foloow all exercise at last part of video.
+		MultipleWindowHandling_Alert_BoxHandling-27
+		under this project I tried.
+		Go to https://www.jobserve.com/in/en/Job-Search/" sire
+		
+		1.unselect Select all Industries check boxes
+		2. Code should be dynamic like:
+		if user give any check box name by method that check box should be selected.
+		
+		
+		1. Go to site https://www.espncricinfo.com/series/england-tour-of-india-2020-21-1243364/india-vs-england-3rd-test-1243386/full-scorecard
+		
+		2. get or search and cricket score table and get the name of player and get score of that played 
+		count total score
+		
+		follow below path WebTable exercise  at end of vedio will get exercise. 
+		https://www.qtpselenium.com/selenium-training/module/533/15626
+		
+		See xpath creating session it will help.
+		
+		
+============================================================================================================================
+		
+TestBase Pakage >Testbase class > it will extends ExtentReportManager class
+reports > ExtentReportManager class >for the reporting
+create folder > reports
+
+Suite.xml > and do formating
+
+
+DataProviders
+Listners
+Soft and hard assertions 
+grouping test cases 
+browser in grouping 
+
+
+TestBase > Browser Select Method
+
+Piolot Project
+
+is element Present Method
+
+
+
+---------Calendar to select----------
+date which need to selct get in string like: 12-04-2021
+convert this string to date object >> by parse mehod
+initilize >> SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");//small mm means micro second so taking caps
+
+Now convert day in to string  >> new SimpleDateFormat("dd").format(ObjOfdateTobeSelected); , month year too. 
+
+now get displaying date of calendar in string
+
+
+compare displaying date to date need to displayed
+
+now use if else > if date need to select is leess than current date 
+
+
+
+------------------------------Need to do remaining---------------------
+create whole framwork and implement Pilot in that 
+Driver Classes for Different Browsers >> need to listen vedio.
+
+get dat from xml,json etc
+Need to do Practice exercise >Practice exercise and scenarios
+https://www.qtpselenium.com/selenium-training/module/13/15734
+
+D:\Ashish code Selenium And Selenium Practice\Aashish Code\selenium code\SeleniumWebDriverCommands\src\test\java
+
+
+
