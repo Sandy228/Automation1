@@ -1573,7 +1573,7 @@ public void hardFailure(String message) {// fail in extent report, test ng and s
 
 
 
-=================Rest Assured qtp==================================
+=================Postman tutorial qtp==================================
 1. GET: Hitting twitter is get like retriving data from server
    Post:Sending username password to server that is post
 2. Put rest.jar on any location and fire a command java -jar rest.jar   	
@@ -1588,6 +1588,124 @@ Here we can set the limit
 1. http://localhost:8080/student/list?program=Financial Analysis&limit=3 
 2. Get request body is disabled means we can provide body
 
+================================Rest Assured qtp=====================
+1. Rest assured official website is  
+https://rest-assured.io/
+Documentation> download will get jars
+
+@Test
+	public void getAllStudents() {
+
+		// Creating our url
+		RestAssured.baseURI = "http://localhost";
+		RestAssured.port = 8080;
+		
+		//RestAssured.basePath = "/student/";
+		
+		
+		//All nodes are showing up in response instead of 2, To Achive proper result do it as in 2nd line
+	//	RestAssured.basePath = "/student/list?programme=Financial Analysis&limit=2";
+		RestAssured.basePath = "/student";
+		
+		//This is the right way to pass the end pass
+		Response response=given().contentType(ContentType.JSON).log().all().get("/list?programme=Financial Analysis&limit=2");
+		
+		
+		
+		response.prettyPrint();
+		
+	}
+
+ Static import Concept:==
+ import static io.restassured.RestAssured.given;
+ given is a method which is static method and can be used by name
+ 
+ Suppose we have sample class and in that static method area so if do static import we can use that method without class name.
+ 
+ like import static java.lang.System.out
+ so we can use out.println();
+ 
+ 
+ =================Post request 3 ways ========================
+ 1 way:- Json object and Json array
+ 2 way:- Java collections
+ 3 way:- Object oriented way
+ 4.way:- Json file which we used
+ 
+ 1 way:- Json object and Json array
+ Order does not matter just remind key name upper case lowercase matters.
+ like "firstName","SandeepNew" ...f and N should be same keys upper or lower
+ 
+ 3rd Way we will make complex Json
+ To create MAP we will create StuDent class with getter and Setter method and values in its Constructor from PostRequest class
+ 
+ For this Json:-
+ {
+    "firstName": "SandeepComplexJson22_Pract",
+    "lastName": "Newalkar22_Pract",
+    "email": "CD22_Pract",
+    "programme": "sandy22Pract@itns.com",
+    "courses": [
+        "Java",
+        "C++",
+        "C"
+    ]
+}
+ 
+- Create Student class create global variable of fname,Lname,Email etc
+- Create contructor Student class with parameters of fname,Lname,Email etc
+- initialize all global variable in constuctor like this.name- name;
+- Create getter setter methods for all global variables.
+- Create class PostRequest put all below:
+
+		// Creating our url
+		RestAssured.baseURI = "http://localhost";
+		RestAssured.port = 8080;
+		RestAssured.basePath = "/student";
+		
+- Create Object of Student class and pass in constuctor all values of variable created.
+- To print in Json format do below and pass Student object in below:		
+given().contentType(ContentType.JSON).log().body().body(stuObj).post();
+
+- Now Map is ready in json 
+ - Now List needs to create
+- Create global Variable List<String> courses; type  
+- Now initialize it in constructor as courses= new ArrayList;
+- Create getter setter methods for courses
+
+- *** Set method give Parameter String type and make course type variable
+inside it as Courses is list type so courses.add(course)
+
+- Now in PostRequest creating list
+- Just call method Studentbject.setCourses("Java");
+
+and List will be created.
+
+For this Json we have 2 maps:-
+ {
+    "firstName": "SandeepComplexJson22_Pract",
+    "lastName": "Newalkar22_Pract",
+    "email": "CD22_Pract",
+    "programme": "sandy22Pract@itns.com",
+    "courses": {
+        "Java",
+        "C++",
+        "C"
+    }
+}
+
+- When we encountered map we need a class like student and if we have 2 maps then need two  classes Studeant for one map and Courses for second class.
+-** When we have 2 maps in json and both are in same level then require 1 class if they on different level then requires two classes.
+- In Courses class create variables id and Rank, Create constructors of it with a parameter id and Rank
+- create getter and Setter methods for id and rank.
+
+-** To panitrate one map in Student of  Courses  , Create global variable Courses class type course
+create getter and setter for this.
+
+- Now got to PostRequest class
+Student class object call StuObject.setCourses(CourseClass Object)
+
+- 
 
 
 
@@ -1597,6 +1715,57 @@ Here we can set the limit
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+==========================POM Framwork==========================
+Create Maven simple Project
+Pom.xml > dependency
+Suites > Classes > test cases
+TestBase Pakage >Testbase class > it will extends ExtentReportManager class
+reports > ExtentReportManager class >for the reporting
+create folder > reports
+
+Suite.xml > and do formating
+
+
+DataProviders
+Listners
+Soft and hard assertions 
+grouping test cases 
+browser in grouping 
+
+
+TestBase > Browser Select Method
+
+Piolot Project
+
+is element Present Method
+
+
+
+---------Calendar to select----------
+date which need to selct get in string like: 12-04-2021
+convert this string to date object >> by parse mehod
+initilize >> SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");//small mm means micro second so taking caps
+
+Now convert day in to string  >> new SimpleDateFormat("dd").format(ObjOfdateTobeSelected); , month year too. 
+
+now get displaying date of calendar in string
+
+
+compare displaying date to date need to displayed
+
+now use if else > if date need to select is leess than current date 
 
 
 
@@ -1705,5 +1874,27 @@ https://www.qtpselenium.com/selenium-training/module/13/15734
 
 D:\Ashish code Selenium And Selenium Practice\Aashish Code\selenium code\SeleniumWebDriverCommands\src\test\java
 
+=====================================POM Project FindBy annotation================
+Find by annotation we for page factory
+Find by annotions only work with page factory
+From support liabrary of selenium gives findby
 
+@FindBy(how=How.XPATH,using="//*[@id='ap_email']")
+	WebElement UserName_EmailFild;
+	
+How is a class, using is variable
 
+we can write like this also:
+@FindBy(id="//*[@id='ap_email']")
+	WebElement UserName_EmailFild;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
